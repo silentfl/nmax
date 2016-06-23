@@ -19,7 +19,7 @@ module Nmax
         .join(' ')
     end
 
-    def insert(value)
+    def push(value)
       return if @data.size == @count &&
                 @data.last[:value] > value
 
@@ -33,6 +33,8 @@ module Nmax
 
       @index += 1
     end
+
+    alias << push
 
     private
 

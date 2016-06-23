@@ -34,8 +34,8 @@ opts.parse!
 raise OptionParser::MissingArgument, 'Count of numbers not set!' if options[:count].nil?
 
 nmax = Nmax::Heap.new(options.count, keep_order: options.keep_order, uniq: options.uniq)
-sequence = Nmax::Reader.new(ARGF)
+numbers = Nmax::Reader.new(ARGF)
 
-sequence.each { |num| nmax.insert(num) }
+numbers.each { |num| nmax << num }
 
 puts nmax
