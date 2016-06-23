@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'nmax'
+require 'optparse'
+require 'ostruct'
+
+options = OpenStruct.new
+
+opts = OptionParser.new do |o|
+  o.on('-n N', '--numbers=N', Integer, 'Count of numbers') do |count|
+    options.count = count
+  end
+
+  o.on('-u', '--uniq', 'Show uniq numbers only') do
+    options.uniq = true
+  end
+
+  o.on('-k', '--keep-order', 'Save order of numbers from original sequence') do
+    options.keep_order = true
+  end
+
+  o.on('-v', '--version', 'Show version') do
+    puts Nmax::VERSION
+    exit
+  end
+
+  o.on('-h', '--help', 'Show help') do
+    puts o
+    exit
+  end
+end
+
+opts.parse!
+raise OptionParser::MissingArgument, 'Count of numbers not set!' if options[:count].nil?
+
+nmax = Nmax::Heap.new(options.count, keep_order: options.keep_order, uniq: options.uniq)
+sequence = Nmax::Reader.new(ARGF)
+
+sequence.each { |num| nmax.insert(num) }
+
+puts nmax
