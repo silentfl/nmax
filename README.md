@@ -3,7 +3,7 @@
 
 # Nmax
 
-Nmax is command line tool thar allow find maximal numbers from input stream
+Nmax is command line tool that allow find maximal numbers from input stream
 
 ## Installation
 
