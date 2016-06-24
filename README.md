@@ -1,3 +1,6 @@
+[![Build Status Master](https://travis-ci.org/silentfl/nmax.svg?branch=master)](https://travis-ci.org/silentfl/nmax)
+[![Code Climate](https://img.shields.io/codeclimate/github/silentfl/nmax.svg?style=flat)](https://codeclimate.com/github/silentfl/nmax)
+
 # Nmax
 
 Nmax is command line tool thar allow find maximal numbers from input stream
