@@ -1,4 +1,16 @@
 language: ruby
+
 rvm:
+  - 1.9.3
+  - 2.1
+  - 2.2
   - 2.2.3
-before_install: gem install bundler -v 1.11.2
+  - jruby-head
+
+before_install: gem install bundler -v 1.11
+
+install: bundle install --jobs=1
+
+cache: bundler
+
+script: bundle exec rspec
