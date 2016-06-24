@@ -13,7 +13,7 @@ describe Nmax::Heap do
   end
 
   context 'examples' do
-    let (:res) { (1..10).to_a.reverse.join(' ') }
+    let(:res) { (1..10).to_a.reverse.join(' ') }
 
     it 'simple' do
       heap = Nmax::Heap.new(10)
@@ -56,7 +56,7 @@ describe Nmax::Heap do
 
   context 'extended examples' do
     context 'uniq' do
-      let (:res) { (1..10).to_a.reverse.join(' ') }
+      let(:res) { (1..10).to_a.reverse.join(' ') }
 
       it 'simple' do
         heap = Nmax::Heap.new(10, uniq: true)
@@ -72,7 +72,7 @@ describe Nmax::Heap do
 
       it 'only one' do
         heap = Nmax::Heap.new(10, uniq: true)
-        (1..10).each { |i| heap << 1 }
+        (1..10).each { heap << 1 }
         expect(heap.to_s).to eq('1')
       end
     end

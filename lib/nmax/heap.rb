@@ -1,4 +1,5 @@
 module Nmax
+  # class Heap find N maximum numbers from given sequence
   class Heap
     def initialize(count, params = {})
       raise ArgumentError, 'Count of maximum must be less or equal 1' if count < 1
@@ -40,7 +41,8 @@ module Nmax
 
     # binary search for decreasing @data
     def bin_search_index(value)
-      left, right = 0, @data.size - 1
+      left = 0
+      right = @data.size - 1
       while left <= right
         mid = (left + right) >> 1
         case value <=> @data[mid][:value]

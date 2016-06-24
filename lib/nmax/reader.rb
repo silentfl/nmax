@@ -1,4 +1,5 @@
 module Nmax
+  # class Reader read input stream and return numbers only
   class Reader
     include Enumerable
 
