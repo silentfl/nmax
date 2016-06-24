@@ -15,7 +15,7 @@ opts = OptionParser.new do |o|
     options.uniq = true
   end
 
-  o.on('-k', '--keep-order', 'Save order of numbers from original sequence') do
+  o.on('-k', '--keep-order', 'Show numbers by stream order') do
     options.keep_order = true
   end
 
